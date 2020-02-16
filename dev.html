@@ -1,0 +1,817 @@
+﻿<!DOCTYPE html>
+<head>
+    <!--<meta http-equiv=Content-Type content="text/html; charset=gb2312">-->
+    <meta charset="utf-8" />
+    <title></title>
+    <style>
+        @font-face {
+            font-family: "Times New Roman";
+        }
+
+        @font-face {
+            font-family: "宋体";
+        }
+
+        @font-face {
+            font-family: "Wingdings";
+        }
+
+        @font-face {
+            font-family: "Courier New";
+        }
+
+        @font-face {
+            font-family: "Arial";
+        }
+
+        @font-face {
+            font-family: "黑体";
+        }
+
+        @font-face {
+            font-family: "Calibri";
+        }
+
+        @font-face {
+            font-family: "Helvetica";
+        }
+
+        @list l0:level1 {
+            mso-level-start-at: 2;
+            mso-level-number-format: decimal;
+            mso-level-suffix: tab;
+            mso-level-text: "%1)";
+            mso-level-tab-stop: 15.6000pt;
+            mso-level-number-position: left;
+            margin-left: 0.0000pt;
+            text-indent: 0.0000pt;
+            font-family: 'Times New Roman';
+        }
+
+        p.MsoNormal {
+            mso-style-name: 正文;
+            mso-style-parent: "";
+            margin: 0pt;
+            margin-bottom: .0001pt;
+            mso-pagination: none;
+            text-align: justify;
+            text-justify: inter-ideograph;
+            font-family: Calibri;
+            mso-fareast-font-family: 宋体;
+            mso-bidi-font-family: 'Times New Roman';
+            font-size: 10.5000pt;
+            mso-font-kerning: 1.0000pt;
+        }
+
+        h1 {
+            mso-style-name: "标题 1";
+            mso-style-next: 正文;
+            margin-top: 17.0000pt;
+            margin-bottom: 16.5000pt;
+            mso-para-margin-top: 0.0000gd;
+            mso-para-margin-bottom: 0.0000gd;
+            page-break-after: avoid;
+            mso-pagination: lines-together;
+            text-align: justify;
+            text-justify: inter-ideograph;
+            mso-outline-level: 1;
+            line-height: 240%;
+            font-family: Calibri;
+            mso-fareast-font-family: 宋体;
+            mso-bidi-font-family: 'Times New Roman';
+            font-weight: bold;
+            font-size: 22.0000pt;
+            mso-font-kerning: 22.0000pt;
+        }
+
+        h2 {
+            mso-style-name: "标题 2";
+            mso-style-noshow: yes;
+            mso-style-next: 正文;
+            margin-top: 13.0000pt;
+            margin-bottom: 13.0000pt;
+            mso-para-margin-top: 0.0000gd;
+            mso-para-margin-bottom: 0.0000gd;
+            page-break-after: avoid;
+            mso-pagination: lines-together;
+            text-align: justify;
+            text-justify: inter-ideograph;
+            mso-outline-level: 2;
+            line-height: 172%;
+            font-family: Arial;
+            mso-fareast-font-family: 黑体;
+            mso-bidi-font-family: 'Times New Roman';
+            font-weight: bold;
+            font-size: 16.0000pt;
+            mso-font-kerning: 1.0000pt;
+        }
+
+        h3 {
+            mso-style-name: "标题 3";
+            mso-style-noshow: yes;
+            mso-style-next: 正文;
+            margin-top: 13.0000pt;
+            margin-bottom: 13.0000pt;
+            mso-para-margin-top: 0.0000gd;
+            mso-para-margin-bottom: 0.0000gd;
+            page-break-after: avoid;
+            mso-pagination: lines-together;
+            text-align: justify;
+            text-justify: inter-ideograph;
+            mso-outline-level: 3;
+            line-height: 172%;
+            font-family: Calibri;
+            mso-fareast-font-family: 宋体;
+            mso-bidi-font-family: 'Times New Roman';
+            font-weight: bold;
+            font-size: 16.0000pt;
+            mso-font-kerning: 1.0000pt;
+        }
+
+        span.10 {
+            font-family: 'Times New Roman';
+        }
+
+        span.15 {
+            font-family: 'Times New Roman';
+            color: rgb(0,0,255);
+            text-decoration: underline;
+            text-underline: single;
+        }
+
+        span.16 {
+            font-family: 'Courier New';
+            font-size: 10.0000pt;
+        }
+
+        span.17 {
+            font-family: 'Times New Roman';
+            color: rgb(128,0,128);
+            text-decoration: underline;
+            text-underline: single;
+        }
+
+        p.p {
+            mso-style-name: "普通\(网站\)";
+            margin-top: 5.0000pt;
+            margin-right: 0.0000pt;
+            margin-bottom: 5.0000pt;
+            margin-left: 0.0000pt;
+            mso-margin-top-alt: auto;
+            mso-margin-bottom-alt: auto;
+            mso-pagination: none;
+            text-align: left;
+            font-family: Calibri;
+            mso-fareast-font-family: 宋体;
+            mso-bidi-font-family: 'Times New Roman';
+            font-size: 12.0000pt;
+        }
+
+        span.msoIns {
+            mso-style-type: export-only;
+            mso-style-name: "";
+            text-decoration: underline;
+            text-underline: single;
+            color: blue;
+        }
+
+        span.msoDel {
+            mso-style-type: export-only;
+            mso-style-name: "";
+            text-decoration: line-through;
+            color: red;
+        }
+
+        table.MsoNormalTable {
+            mso-style-name: 普通表格;
+            mso-style-parent: "";
+            mso-style-noshow: yes;
+            mso-tstyle-rowband-size: 0;
+            mso-tstyle-colband-size: 0;
+            mso-padding-alt: 0.0000pt 5.4000pt 0.0000pt 5.4000pt;
+            mso-para-margin: 0pt;
+            mso-para-margin-bottom: .0001pt;
+            mso-pagination: widow-orphan;
+            font-family: 'Times New Roman';
+            font-size: 10.0000pt;
+            mso-ansi-language: #0400;
+            mso-fareast-language: #0400;
+            mso-bidi-language: #0400;
+        }
+
+        @page {
+            mso-page-border-surround-header: no;
+            mso-page-border-surround-footer: no;
+        }
+
+        @page Section0 {
+            margin-top: 72.0000pt;
+            margin-bottom: 72.0000pt;
+            margin-left: 90.0000pt;
+            margin-right: 90.0000pt;
+            size: 595.3000pt 841.9000pt;
+            layout-grid: 15.6000pt;
+        }
+
+        div.Section0 {
+            page: Section0;
+        }
+    </style>
+</head>
+<body style="tab-interval:21pt;text-justify-trim:punctuation;">
+    <!--StartFragment-->
+    <div class="Section0" style="layout-grid:15.6000pt;">
+        <h1 align=center style="text-align:center;">
+            <b>
+                <span style="mso-spacerun:'yes';font-family:宋体;mso-ascii-font-family:Calibri;
+mso-hansi-font-family:Calibri;mso-bidi-font-family:'Times New Roman';font-weight:bold;
+font-size:24.0000pt;mso-font-kerning:22.0000pt;"><font face="宋体">腾讯云直播搭建说明</font></span>
+            </b><b>
+                <span style="mso-spacerun:'yes';font-family:宋体;mso-ascii-font-family:Calibri;
+mso-hansi-font-family:Calibri;mso-bidi-font-family:'Times New Roman';font-weight:bold;
+font-size:24.0000pt;mso-font-kerning:22.0000pt;"><o:p></o:p></span>
+            </b>
+        </h1><p class=MsoNormal>
+            <b>
+                <span style="mso-spacerun:'yes';font-family:宋体;mso-ascii-font-family:Calibri;
+mso-hansi-font-family:Calibri;mso-bidi-font-family:'Times New Roman';font-weight:bold;
+font-size:16.0000pt;mso-font-kerning:1.0000pt;"><font face="宋体">第一步</font>:<font face="宋体">登录腾讯云</font></span>
+            </b><b>
+                <span style="mso-spacerun:'yes';font-family:宋体;mso-ascii-font-family:Calibri;
+mso-hansi-font-family:Calibri;mso-bidi-font-family:'Times New Roman';font-weight:bold;
+font-size:16.0000pt;mso-font-kerning:1.0000pt;"><o:p></o:p></span>
+            </b>
+        </p><p class=MsoNormal>
+            <span style="mso-spacerun:'yes';font-family:宋体;mso-ascii-font-family:Calibri;
+mso-hansi-font-family:Calibri;mso-bidi-font-family:'Times New Roman';font-size:10.5000pt;
+mso-font-kerning:1.0000pt;"><font face="宋体">地址</font>:</span><span>
+                <a href="https://cloud.tencent.com/login">
+                    <u>
+                        <span class="17" style="mso-spacerun:'yes';font-family:宋体;color:rgb(128,0,128);
+text-decoration:underline;text-underline:single;">https://cloud.tencent.com/login</span>
+                    </u>
+                </a>
+            </span><span style="mso-spacerun:'yes';font-family:宋体;mso-ascii-font-family:Calibri;
+mso-hansi-font-family:Calibri;mso-bidi-font-family:'Times New Roman';font-size:10.5000pt;
+mso-font-kerning:1.0000pt;">&nbsp;</span><span style="mso-spacerun:'yes';font-family:宋体;mso-ascii-font-family:Calibri;
+mso-hansi-font-family:Calibri;mso-bidi-font-family:'Times New Roman';font-size:10.5000pt;
+mso-font-kerning:1.0000pt;"><o:p></o:p></span>
+        </p><p class=MsoNormal>
+            <span style="mso-spacerun:'yes';font-family:Calibri;mso-fareast-font-family:宋体;
+mso-bidi-font-family:'Times New Roman';font-size:10.5000pt;mso-font-kerning:1.0000pt;"><o:p>&nbsp;</o:p></span>
+        </p><p class=MsoNormal>
+            <b>
+                <span style="mso-spacerun:'yes';font-family:宋体;mso-ascii-font-family:Calibri;
+mso-hansi-font-family:Calibri;mso-bidi-font-family:'Times New Roman';font-weight:bold;
+font-size:10.5000pt;mso-font-kerning:1.0000pt;"><font face="宋体">以下图片有些需要放大比例才能看得清楚</font></span>
+            </b><b>
+                <span style="mso-spacerun:'yes';font-family:Calibri;mso-fareast-font-family:宋体;
+mso-bidi-font-family:'Times New Roman';font-weight:bold;font-size:10.5000pt;
+mso-font-kerning:1.0000pt;"><o:p></o:p></span>
+            </b>
+        </p><p class=MsoNormal>
+            <b>
+                <span style="mso-spacerun:'yes';font-family:宋体;mso-ascii-font-family:Calibri;
+mso-hansi-font-family:Calibri;mso-bidi-font-family:'Times New Roman';font-weight:bold;
+font-size:16.0000pt;mso-font-kerning:1.0000pt;"><o:p>&nbsp;</o:p></span>
+            </b>
+        </p><p class=MsoNormal>
+            <b>
+                <span style="mso-spacerun:'yes';font-family:宋体;mso-ascii-font-family:Calibri;
+mso-hansi-font-family:Calibri;mso-bidi-font-family:'Times New Roman';font-weight:bold;
+font-size:16.0000pt;mso-font-kerning:1.0000pt;"><font face="宋体">第二步</font>:<font face="宋体">进入控制台</font></span>
+            </b><b>
+                <span style="mso-spacerun:'yes';font-family:宋体;mso-ascii-font-family:Calibri;
+mso-hansi-font-family:Calibri;mso-bidi-font-family:'Times New Roman';font-weight:bold;
+font-size:16.0000pt;mso-font-kerning:1.0000pt;"><o:p></o:p></span>
+            </b>
+        </p><p class=MsoNormal>
+            <span style="mso-spacerun:'yes';font-family:宋体;mso-ascii-font-family:Calibri;
+mso-hansi-font-family:Calibri;mso-bidi-font-family:'Times New Roman';font-size:10.5000pt;
+mso-font-kerning:1.0000pt;"><font face="宋体">地址</font>:</span><span>
+                <a href="https://console.cloud.tencent.com/">
+                    <u>
+                        <span class="15" style="mso-spacerun:'yes';font-family:宋体;color:rgb(0,0,255);
+text-decoration:underline;text-underline:single;">https://console.cloud.tencent.com/</span>
+                    </u>
+                </a>
+            </span><span style="mso-spacerun:'yes';font-family:宋体;mso-ascii-font-family:Calibri;
+mso-hansi-font-family:Calibri;mso-bidi-font-family:'Times New Roman';font-size:10.5000pt;
+mso-font-kerning:1.0000pt;"><o:p></o:p></span>
+        </p><p class=MsoNormal>
+            <span style="mso-spacerun:'yes';font-family:宋体;mso-ascii-font-family:Calibri;
+mso-hansi-font-family:Calibri;mso-bidi-font-family:'Times New Roman';font-size:10.5000pt;
+mso-font-kerning:1.0000pt;">1).<font face="宋体">登录后点击右上角</font></span><span style="mso-spacerun:'yes';font-family:Calibri;mso-fareast-font-family:宋体;
+mso-bidi-font-family:'Times New Roman';font-size:10.5000pt;mso-font-kerning:1.0000pt;">&#8221;</span><span style="mso-spacerun:'yes';font-family:宋体;mso-ascii-font-family:Calibri;
+mso-hansi-font-family:Calibri;mso-bidi-font-family:'Times New Roman';font-size:10.5000pt;
+mso-font-kerning:1.0000pt;"><font face="宋体">控制台</font></span><span style="mso-spacerun:'yes';font-family:Calibri;mso-fareast-font-family:宋体;
+mso-bidi-font-family:'Times New Roman';font-size:10.5000pt;mso-font-kerning:1.0000pt;">&#8221;</span><span style="mso-spacerun:'yes';font-family:Calibri;mso-fareast-font-family:宋体;
+mso-bidi-font-family:'Times New Roman';font-size:10.5000pt;mso-font-kerning:1.0000pt;"><o:p></o:p></span>
+        </p><p class=MsoNormal>
+
+            <img width="458" height="387" src="assets/img/dev/腾讯云直播搭建说明241.png"><span style="mso-spacerun:'yes';font-family:Calibri;mso-fareast-font-family:宋体;
+mso-bidi-font-family:'Times New Roman';font-size:10.5000pt;mso-font-kerning:1.0000pt;"><o:p>&nbsp;</o:p></span>
+        </p><p class=MsoNormal style="mso-list:l0 level1 lfo1;">
+            <![if !supportLists]><span style="font-family:宋体;mso-ascii-font-family:Calibri;mso-hansi-font-family:Calibri;
+mso-bidi-font-family:'Times New Roman';font-size:10.5000pt;mso-font-kerning:1.0000pt;"><span style='mso-list:Ignore;'>2)<span>&nbsp;</span></span></span><![endif]><span style="mso-spacerun:'yes';font-family:宋体;mso-ascii-font-family:Calibri;
+mso-hansi-font-family:Calibri;mso-bidi-font-family:'Times New Roman';font-size:10.5000pt;
+mso-font-kerning:1.0000pt;"><font face="宋体">进入</font></span><span style="mso-spacerun:'yes';font-family:Calibri;mso-fareast-font-family:宋体;
+mso-bidi-font-family:'Times New Roman';font-size:10.5000pt;mso-font-kerning:1.0000pt;">&#8221;</span><span style="mso-spacerun:'yes';font-family:宋体;mso-ascii-font-family:Calibri;
+mso-hansi-font-family:Calibri;mso-bidi-font-family:'Times New Roman';font-size:10.5000pt;
+mso-font-kerning:1.0000pt;"><font face="宋体">云直播</font></span><span style="mso-spacerun:'yes';font-family:Calibri;mso-fareast-font-family:宋体;
+mso-bidi-font-family:'Times New Roman';font-size:10.5000pt;mso-font-kerning:1.0000pt;">&#8221;</span><span style="mso-spacerun:'yes';font-family:Calibri;mso-fareast-font-family:宋体;
+mso-bidi-font-family:'Times New Roman';font-size:10.5000pt;mso-font-kerning:1.0000pt;"><o:p></o:p></span>
+        </p><p class=MsoNormal>
+            <span style="mso-spacerun:'yes';font-family:宋体;mso-ascii-font-family:Calibri;
+mso-hansi-font-family:Calibri;mso-bidi-font-family:'Times New Roman';font-size:10.5000pt;
+mso-font-kerning:1.0000pt;"><font face="宋体">第一次进入可能会提示开通云直播</font>,<font face="宋体">按照引导步骤开通即可</font></span><span style="mso-spacerun:'yes';font-family:Calibri;mso-fareast-font-family:宋体;
+mso-bidi-font-family:'Times New Roman';font-size:10.5000pt;mso-font-kerning:1.0000pt;"><o:p></o:p></span>
+        </p><p class=MsoNormal>
+            <img width="553" height="203" src="assets/img/dev/腾讯云直播搭建说明278.png"><span style="mso-spacerun:'yes';font-family:Calibri;mso-fareast-font-family:宋体;
+mso-bidi-font-family:'Times New Roman';font-size:10.5000pt;mso-font-kerning:1.0000pt;"><o:p>&nbsp;</o:p></span>
+        </p><p class=MsoNormal>
+            <span style="mso-spacerun:'yes';font-family:宋体;mso-ascii-font-family:Calibri;
+mso-hansi-font-family:Calibri;mso-bidi-font-family:'Times New Roman';font-size:10.5000pt;
+mso-font-kerning:1.0000pt;"><o:p>&nbsp;</o:p></span>
+        </p><p class=MsoNormal>
+            <span style="mso-spacerun:'yes';font-family:宋体;mso-ascii-font-family:Calibri;
+mso-hansi-font-family:Calibri;mso-bidi-font-family:'Times New Roman';font-size:10.5000pt;
+mso-font-kerning:1.0000pt;"><o:p>&nbsp;</o:p></span>
+        </p><p class=MsoNormal>
+            <span style="mso-spacerun:'yes';font-family:宋体;mso-ascii-font-family:Calibri;
+mso-hansi-font-family:Calibri;mso-bidi-font-family:'Times New Roman';font-size:10.5000pt;
+mso-font-kerning:1.0000pt;"><o:p>&nbsp;</o:p></span>
+        </p><p class=MsoNormal>
+            <span style="mso-spacerun:'yes';font-family:宋体;mso-ascii-font-family:Calibri;
+mso-hansi-font-family:Calibri;mso-bidi-font-family:'Times New Roman';font-size:10.5000pt;
+mso-font-kerning:1.0000pt;"><o:p>&nbsp;</o:p></span>
+        </p><p class=MsoNormal>
+            <span style="mso-spacerun:'yes';font-family:宋体;mso-ascii-font-family:Calibri;
+mso-hansi-font-family:Calibri;mso-bidi-font-family:'Times New Roman';font-size:10.5000pt;
+mso-font-kerning:1.0000pt;"><o:p>&nbsp;</o:p></span>
+        </p><p class=MsoNormal>
+            <span style="mso-spacerun:'yes';font-family:宋体;mso-ascii-font-family:Calibri;
+mso-hansi-font-family:Calibri;mso-bidi-font-family:'Times New Roman';font-size:10.5000pt;
+mso-font-kerning:1.0000pt;"><font face="宋体">云直播界面如下,一定要把计费模式切换为"日结流量计费",默认是带宽计费,切换后次日生效,也就是说如果当日就是测试直播的话可能会收费,应该几毛到几块,并且购买相应的流量包,否则收费相对比较高</font></span><span style="mso-spacerun:'yes';font-family:宋体;mso-ascii-font-family:Calibri;
+mso-hansi-font-family:Calibri;mso-bidi-font-family:'Times New Roman';font-size:10.5000pt;
+mso-font-kerning:1.0000pt;"><o:p></o:p></span>
+        </p><p class=MsoNormal>
+            <span style="mso-spacerun:'yes';font-family:宋体;mso-ascii-font-family:Calibri;
+mso-hansi-font-family:Calibri;mso-bidi-font-family:'Times New Roman';font-size:10.5000pt;
+mso-font-kerning:1.0000pt;"><o:p>&nbsp;</o:p></span>
+        </p><p class=MsoNormal>
+            <img width="553" height="303" src="assets/img/dev/腾讯云直播搭建说明294.png"><span style="mso-spacerun:'yes';font-family:宋体;mso-ascii-font-family:Calibri;
+mso-hansi-font-family:Calibri;mso-bidi-font-family:'Times New Roman';font-size:10.5000pt;
+mso-font-kerning:1.0000pt;"><o:p>&nbsp;</o:p></span>
+        </p><p class=MsoNormal>
+            <span style="mso-spacerun:'yes';font-family:Calibri;mso-fareast-font-family:宋体;
+mso-bidi-font-family:'Times New Roman';font-size:10.5000pt;mso-font-kerning:1.0000pt;"><o:p>&nbsp;</o:p></span>
+        </p><p class=MsoNormal>
+            <span style="mso-spacerun:'yes';font-family:宋体;mso-ascii-font-family:Calibri;
+mso-hansi-font-family:Calibri;mso-bidi-font-family:'Times New Roman';font-size:10.5000pt;
+mso-font-kerning:1.0000pt;"><font face="宋体">可参见腾讯自有引导</font>(<font face="宋体">如下图</font><font face="Calibri">)</font></span><span style="mso-spacerun:'yes';font-family:Calibri;mso-fareast-font-family:宋体;
+mso-bidi-font-family:'Times New Roman';font-size:10.5000pt;mso-font-kerning:1.0000pt;"><o:p></o:p></span>
+        </p><p class=MsoNormal>
+            <img width="554" height="81" src="assets/img/dev/腾讯云直播搭建说明312.png"><span style="mso-spacerun:'yes';font-family:Calibri;mso-fareast-font-family:宋体;
+mso-bidi-font-family:'Times New Roman';font-size:10.5000pt;mso-font-kerning:1.0000pt;"><o:p>&nbsp;</o:p></span>
+        </p><p class=MsoNormal>
+            <span style="mso-spacerun:'yes';font-family:宋体;mso-ascii-font-family:Calibri;
+mso-hansi-font-family:Calibri;mso-bidi-font-family:'Times New Roman';font-size:10.5000pt;
+mso-font-kerning:1.0000pt;"><font face="宋体">亦可继续往下看参考本次引导</font></span><span style="mso-spacerun:'yes';font-family:宋体;mso-ascii-font-family:Calibri;
+mso-hansi-font-family:Calibri;mso-bidi-font-family:'Times New Roman';font-size:10.5000pt;
+mso-font-kerning:1.0000pt;"><o:p></o:p></span>
+        </p><p class=MsoNormal>
+            <b>
+                <span style="mso-spacerun:'yes';font-family:宋体;mso-ascii-font-family:Calibri;
+mso-hansi-font-family:Calibri;mso-bidi-font-family:'Times New Roman';font-weight:bold;
+font-size:10.5000pt;mso-font-kerning:1.0000pt;"><o:p>&nbsp;</o:p></span>
+            </b>
+        </p><p class=MsoNormal>
+            <b>
+                <span style="mso-spacerun:'yes';font-family:宋体;mso-ascii-font-family:Calibri;
+mso-hansi-font-family:Calibri;mso-bidi-font-family:'Times New Roman';font-weight:bold;
+font-size:10.5000pt;mso-font-kerning:1.0000pt;"><o:p>&nbsp;</o:p></span>
+            </b>
+        </p><p class=MsoNormal>
+            <b>
+                <span style="mso-spacerun:'yes';font-family:宋体;mso-ascii-font-family:Calibri;
+mso-hansi-font-family:Calibri;mso-bidi-font-family:'Times New Roman';font-weight:bold;
+font-size:16.0000pt;mso-font-kerning:1.0000pt;"><font face="宋体">第三步</font>: <font face="宋体">添加自有域名</font><font face="Calibri">(</font><font face="宋体">菜单栏左侧</font><font face="Calibri">)</font></span>
+            </b><b>
+                <span style="mso-spacerun:'yes';font-family:宋体;mso-ascii-font-family:Calibri;
+mso-hansi-font-family:Calibri;mso-bidi-font-family:'Times New Roman';font-weight:bold;
+font-size:16.0000pt;mso-font-kerning:1.0000pt;"><o:p></o:p></span>
+            </b>
+        </p><p class=MsoNormal>
+            <img width="335" height="342" src="assets/img/dev/腾讯云直播搭建说明349.png"><span style="mso-spacerun:'yes';font-family:Calibri;mso-fareast-font-family:宋体;
+mso-bidi-font-family:'Times New Roman';font-size:10.5000pt;mso-font-kerning:1.0000pt;"><o:p>&nbsp;</o:p></span>
+        </p><p class=MsoNormal>
+            <span style="mso-spacerun:'yes';font-family:宋体;mso-ascii-font-family:Calibri;
+mso-hansi-font-family:Calibri;mso-bidi-font-family:'Times New Roman';font-size:10.5000pt;
+mso-font-kerning:1.0000pt;"><font face="宋体">此处需要两个域名</font></span><span style="mso-spacerun:'yes';font-family:宋体;mso-ascii-font-family:Calibri;
+mso-hansi-font-family:Calibri;mso-bidi-font-family:'Times New Roman';font-size:10.5000pt;
+mso-font-kerning:1.0000pt;">,<font face="宋体">一个是播放域名</font><font face="Calibri">,</font><font face="宋体">一个是推流域名</font><font face="Calibri">,</font><font face="宋体">如下图</font></span><span style="mso-spacerun:'yes';font-family:宋体;mso-ascii-font-family:Calibri;
+mso-hansi-font-family:Calibri;mso-bidi-font-family:'Times New Roman';font-size:10.5000pt;
+mso-font-kerning:1.0000pt;"><o:p></o:p></span>
+        </p><p class=MsoNormal>
+            <img width="554" height="156" src="assets/img/dev/腾讯云直播搭建说明380.png"><span style="mso-spacerun:'yes';font-family:Calibri;mso-fareast-font-family:宋体;
+mso-bidi-font-family:'Times New Roman';font-size:10.5000pt;mso-font-kerning:1.0000pt;"><o:p>&nbsp;</o:p></span>
+        </p><p class=MsoNormal>
+            <span style="mso-spacerun:'yes';font-family:宋体;mso-ascii-font-family:Calibri;
+mso-hansi-font-family:Calibri;mso-bidi-font-family:'Times New Roman';font-size:10.5000pt;
+mso-font-kerning:1.0000pt;"><font face="宋体">此处我们使用的是自有域名</font></span><span style="mso-spacerun:'yes';font-family:宋体;mso-ascii-font-family:Calibri;
+mso-hansi-font-family:Calibri;mso-bidi-font-family:'Times New Roman';font-size:10.5000pt;
+mso-font-kerning:1.0000pt;">(</span><span style="mso-spacerun:'yes';font-family:宋体;mso-ascii-font-family:Calibri;
+mso-hansi-font-family:Calibri;mso-bidi-font-family:'Times New Roman';color:rgb(255,0,0);
+font-size:10.5000pt;mso-font-kerning:1.0000pt;"><font face="宋体">如果对域名不懂的话可以联系我们帮忙注册并备案</font>,<font face="宋体">因为腾讯</font><font face="Calibri">,</font><font face="宋体">阿里都是国内运营商</font><font face="Calibri">,</font><font face="宋体">必须要绑定备案过的域名</font></span><span style="mso-spacerun:'yes';font-family:宋体;mso-ascii-font-family:Calibri;
+mso-hansi-font-family:Calibri;mso-bidi-font-family:'Times New Roman';font-size:10.5000pt;
+mso-font-kerning:1.0000pt;">)</span><span style="mso-spacerun:'yes';font-family:Calibri;mso-fareast-font-family:宋体;
+mso-bidi-font-family:'Times New Roman';font-size:10.5000pt;mso-font-kerning:1.0000pt;"><o:p></o:p></span>
+        </p><p class=MsoNormal>
+            <img width="554" height="187" src="assets/img/dev/腾讯云直播搭建说明446.png"><span style="mso-spacerun:'yes';font-family:Calibri;mso-fareast-font-family:宋体;
+mso-bidi-font-family:'Times New Roman';font-size:10.5000pt;mso-font-kerning:1.0000pt;"><o:p>&nbsp;</o:p></span>
+        </p><p class=MsoNormal>
+            <span style="mso-spacerun:'yes';font-family:宋体;mso-ascii-font-family:Calibri;
+mso-hansi-font-family:Calibri;mso-bidi-font-family:'Times New Roman';font-size:10.5000pt;
+mso-font-kerning:1.0000pt;"><font face="宋体">首先添加播放域名</font></span><span style="mso-spacerun:'yes';font-family:宋体;mso-ascii-font-family:Calibri;
+mso-hansi-font-family:Calibri;mso-bidi-font-family:'Times New Roman';font-size:10.5000pt;
+mso-font-kerning:1.0000pt;">,<font face="宋体">填写</font><font face="Calibri">live.xxxx.com live</font><font face="宋体">是本人自定义的</font><font face="Calibri">,</font><font face="宋体">你也可以使用</font></span><span style="mso-spacerun:'yes';font-family:宋体;mso-ascii-font-family:Calibri;
+mso-hansi-font-family:Calibri;mso-bidi-font-family:'Times New Roman';font-size:10.5000pt;
+mso-font-kerning:1.0000pt;"><o:p></o:p></span>
+        </p><p class=MsoNormal>
+            <span style="mso-spacerun:'yes';font-family:宋体;mso-ascii-font-family:Calibri;
+mso-hansi-font-family:Calibri;mso-bidi-font-family:'Times New Roman';font-size:10.5000pt;
+mso-font-kerning:1.0000pt;">bofang.xx.com,bf.xxx.om <font face="宋体">等等</font><font face="Calibri">,</font><font face="宋体">类型选择</font></span><span style="mso-spacerun:'yes';font-family:Calibri;mso-fareast-font-family:宋体;
+mso-bidi-font-family:'Times New Roman';font-size:10.5000pt;mso-font-kerning:1.0000pt;">&#8221;</span><span style="mso-spacerun:'yes';font-family:宋体;mso-ascii-font-family:Calibri;
+mso-hansi-font-family:Calibri;mso-bidi-font-family:'Times New Roman';font-size:10.5000pt;
+mso-font-kerning:1.0000pt;"><font face="宋体">播放域名</font></span><span style="mso-spacerun:'yes';font-family:Calibri;mso-fareast-font-family:宋体;
+mso-bidi-font-family:'Times New Roman';font-size:10.5000pt;mso-font-kerning:1.0000pt;">&#8221;</span><span style="mso-spacerun:'yes';font-family:宋体;mso-ascii-font-family:Calibri;
+mso-hansi-font-family:Calibri;mso-bidi-font-family:'Times New Roman';font-size:10.5000pt;
+mso-font-kerning:1.0000pt;"><font face="宋体">选项</font>,<font face="宋体">加速区域选择</font></span><span style="mso-spacerun:'yes';font-family:Calibri;mso-fareast-font-family:宋体;
+mso-bidi-font-family:'Times New Roman';font-size:10.5000pt;mso-font-kerning:1.0000pt;">&#8221;</span><span style="mso-spacerun:'yes';font-family:宋体;mso-ascii-font-family:Calibri;
+mso-hansi-font-family:Calibri;mso-bidi-font-family:'Times New Roman';font-size:10.5000pt;
+mso-font-kerning:1.0000pt;"><font face="宋体">中国大陆</font></span><span style="mso-spacerun:'yes';font-family:Calibri;mso-fareast-font-family:宋体;
+mso-bidi-font-family:'Times New Roman';font-size:10.5000pt;mso-font-kerning:1.0000pt;">&#8221;</span><span style="mso-spacerun:'yes';font-family:宋体;mso-ascii-font-family:Calibri;
+mso-hansi-font-family:Calibri;mso-bidi-font-family:'Times New Roman';font-size:10.5000pt;
+mso-font-kerning:1.0000pt;">,<font face="宋体">如果境外观看用户较多的话可以选择</font></span><span style="mso-spacerun:'yes';font-family:Calibri;mso-fareast-font-family:宋体;
+mso-bidi-font-family:'Times New Roman';font-size:10.5000pt;mso-font-kerning:1.0000pt;">&#8221;</span><span style="mso-spacerun:'yes';font-family:宋体;mso-ascii-font-family:Calibri;
+mso-hansi-font-family:Calibri;mso-bidi-font-family:'Times New Roman';font-size:10.5000pt;
+mso-font-kerning:1.0000pt;"><font face="宋体">全球加速</font></span><span style="mso-spacerun:'yes';font-family:Calibri;mso-fareast-font-family:宋体;
+mso-bidi-font-family:'Times New Roman';font-size:10.5000pt;mso-font-kerning:1.0000pt;">&#8221;</span><span style="mso-spacerun:'yes';font-family:宋体;mso-ascii-font-family:Calibri;
+mso-hansi-font-family:Calibri;mso-bidi-font-family:'Times New Roman';font-size:10.5000pt;
+mso-font-kerning:1.0000pt;">,<font face="宋体">但是全球加速的流量腾讯需要另外收费</font><font face="Calibri">.</font></span><span style="mso-spacerun:'yes';font-family:Calibri;mso-fareast-font-family:宋体;
+mso-bidi-font-family:'Times New Roman';font-size:10.5000pt;mso-font-kerning:1.0000pt;"><o:p></o:p></span>
+        </p><p class=MsoNormal>
+            <img width="553" height="242" src="assets/img/dev/腾讯云直播搭建说明587.png"><span style="mso-spacerun:'yes';font-family:Calibri;mso-fareast-font-family:宋体;
+mso-bidi-font-family:'Times New Roman';font-size:10.5000pt;mso-font-kerning:1.0000pt;"><o:p>&nbsp;</o:p></span>
+        </p><p class=MsoNormal>
+            <span style="mso-spacerun:'yes';font-family:宋体;mso-ascii-font-family:Calibri;
+mso-hansi-font-family:Calibri;mso-bidi-font-family:'Times New Roman';font-size:10.5000pt;
+mso-font-kerning:1.0000pt;"><font face="宋体">然后添加推流域名</font></span><span style="mso-spacerun:'yes';font-family:宋体;mso-ascii-font-family:Calibri;
+mso-hansi-font-family:Calibri;mso-bidi-font-family:'Times New Roman';font-size:10.5000pt;
+mso-font-kerning:1.0000pt;">,push.xxxx.com,push<font face="宋体">也是本人自定义</font><font face="Calibri">,</font><font face="宋体">也可以定义其他名称</font></span><span style="mso-spacerun:'yes';font-family:Calibri;mso-fareast-font-family:宋体;
+mso-bidi-font-family:'Times New Roman';font-size:10.5000pt;mso-font-kerning:1.0000pt;"><o:p></o:p></span>
+        </p><p class=MsoNormal>
+            <img width="554" height="231" src="assets/img/dev/腾讯云直播搭建说明634.png"><span style="mso-spacerun:'yes';font-family:Calibri;mso-fareast-font-family:宋体;
+mso-bidi-font-family:'Times New Roman';font-size:10.5000pt;mso-font-kerning:1.0000pt;"><o:p>&nbsp;</o:p></span>
+        </p><p class=MsoNormal>
+            <span style="mso-spacerun:'yes';font-family:宋体;mso-ascii-font-family:Calibri;
+mso-hansi-font-family:Calibri;mso-bidi-font-family:'Times New Roman';font-size:10.5000pt;
+mso-font-kerning:1.0000pt;"><font face="宋体">添加两个域名后</font>,<font face="宋体">会提示</font><font face="Calibri">CNAME</font><font face="宋体">未配置</font></span><span style="mso-spacerun:'yes';font-family:宋体;mso-ascii-font-family:Calibri;
+mso-hansi-font-family:Calibri;mso-bidi-font-family:'Times New Roman';font-size:10.5000pt;
+mso-font-kerning:1.0000pt;"><o:p></o:p></span>
+        </p><p class=MsoNormal>
+            <span style="mso-spacerun:'yes';font-family:宋体;mso-ascii-font-family:Calibri;
+mso-hansi-font-family:Calibri;mso-bidi-font-family:'Times New Roman';font-size:10.5000pt;
+mso-font-kerning:1.0000pt;"><font face="宋体">如果不会解析域名请点击链接</font></span><span>
+                <a href="https://cloud.tencent.com/document/product/267/19908">
+                    <u>
+                        <span class="15" style="mso-spacerun:'yes';font-family:宋体;color:rgb(0,0,255);
+text-decoration:underline;text-underline:single;">https://cloud.tencent.com/document/product/267/19908</span>
+                    </u>
+                </a>
+            </span><span style="mso-spacerun:'yes';font-family:宋体;mso-ascii-font-family:Calibri;
+mso-hansi-font-family:Calibri;mso-bidi-font-family:'Times New Roman';font-size:10.5000pt;
+mso-font-kerning:1.0000pt;"><o:p></o:p></span>
+        </p><p class=MsoNormal>
+            <span style="mso-spacerun:'yes';font-family:宋体;mso-ascii-font-family:Calibri;
+mso-hansi-font-family:Calibri;mso-bidi-font-family:'Times New Roman';font-size:10.5000pt;
+mso-font-kerning:1.0000pt;"><o:p>&nbsp;</o:p></span>
+        </p><p class=MsoNormal>
+            <span style="mso-spacerun:'yes';font-family:宋体;mso-ascii-font-family:Calibri;
+mso-hansi-font-family:Calibri;mso-bidi-font-family:'Times New Roman';font-size:10.5000pt;
+mso-font-kerning:1.0000pt;"><font face="宋体">配置好后</font> <font face="宋体">点击推流地址后面的</font></span><span style="mso-spacerun:'yes';font-family:Calibri;mso-fareast-font-family:宋体;
+mso-bidi-font-family:'Times New Roman';font-size:10.5000pt;mso-font-kerning:1.0000pt;">&#8221;</span><span style="mso-spacerun:'yes';font-family:宋体;mso-ascii-font-family:Calibri;
+mso-hansi-font-family:Calibri;mso-bidi-font-family:'Times New Roman';font-size:10.5000pt;
+mso-font-kerning:1.0000pt;"><font face="宋体">管理</font></span><span style="mso-spacerun:'yes';font-family:Calibri;mso-fareast-font-family:宋体;
+mso-bidi-font-family:'Times New Roman';font-size:10.5000pt;mso-font-kerning:1.0000pt;">&#8221;</span><span style="mso-spacerun:'yes';font-family:Calibri;mso-fareast-font-family:宋体;
+mso-bidi-font-family:'Times New Roman';font-size:10.5000pt;mso-font-kerning:1.0000pt;"><o:p></o:p></span>
+        </p><p class=MsoNormal>
+            <img width="554" height="64" src="assets/img/dev/腾讯云直播搭建说明811.png"><span style="mso-spacerun:'yes';font-family:Calibri;mso-fareast-font-family:宋体;
+mso-bidi-font-family:'Times New Roman';font-size:10.5000pt;mso-font-kerning:1.0000pt;"><o:p>&nbsp;</o:p></span>
+        </p><p class=MsoNormal>
+            <span style="mso-spacerun:'yes';font-family:宋体;mso-ascii-font-family:Calibri;
+mso-hansi-font-family:Calibri;mso-bidi-font-family:'Times New Roman';font-size:10.5000pt;
+mso-font-kerning:1.0000pt;"><font face="宋体">点击推流配置</font></span><span style="mso-spacerun:'yes';font-family:宋体;mso-ascii-font-family:Calibri;
+mso-hansi-font-family:Calibri;mso-bidi-font-family:'Times New Roman';font-size:10.5000pt;
+mso-font-kerning:1.0000pt;">&nbsp;<font face="宋体">把鉴权关闭</font>,<font face="宋体">腾讯会提示</font></span><span style="mso-spacerun:'yes';font-family:Calibri;mso-fareast-font-family:宋体;
+mso-bidi-font-family:'Times New Roman';font-size:10.5000pt;mso-font-kerning:1.0000pt;">&#8221;</span><span style="mso-spacerun:'yes';font-family:Helvetica;color:rgb(0,0,0);
+letter-spacing:0.0000pt;text-transform:none;font-style:normal;
+font-size:9.0000pt;mso-font-kerning:1.0000pt;background:rgb(255,255,255);
+mso-shading:rgb(255,255,255);"><font face="Helvetica">关闭鉴权可能导致盗推风险，建议您开启。</font></span><span style="mso-spacerun:'yes';font-family:Calibri;mso-fareast-font-family:宋体;
+mso-bidi-font-family:'Times New Roman';font-size:10.5000pt;mso-font-kerning:1.0000pt;">&#8221;</span><span style="mso-spacerun:'yes';font-family:宋体;mso-ascii-font-family:Calibri;
+mso-hansi-font-family:Calibri;mso-bidi-font-family:'Times New Roman';font-size:10.5000pt;
+mso-font-kerning:1.0000pt;">,</span><span style="mso-spacerun:'yes';font-family:宋体;mso-ascii-font-family:Calibri;
+mso-hansi-font-family:Calibri;mso-bidi-font-family:'Times New Roman';font-size:10.5000pt;
+mso-font-kerning:1.0000pt;"><o:p></o:p></span>
+        </p><p class=MsoNormal>
+            <span style="mso-spacerun:'yes';font-family:宋体;mso-ascii-font-family:Calibri;
+mso-hansi-font-family:Calibri;mso-bidi-font-family:'Times New Roman';font-size:10.5000pt;
+mso-font-kerning:1.0000pt;"><font face="宋体">本人为了方便考虑关闭了鉴权</font>,<font face="宋体">如果你需要鉴权可以按照他的代码实现鉴权</font><font face="Calibri">,</font><font face="宋体">鉴权是为了防止被人盗用推流</font></span><span style="mso-spacerun:'yes';font-family:Calibri;mso-fareast-font-family:宋体;
+mso-bidi-font-family:'Times New Roman';font-size:10.5000pt;mso-font-kerning:1.0000pt;"><o:p></o:p></span>
+        </p><p class=MsoNormal>
+            <img width="553" height="320" src="assets/img/dev/腾讯云直播搭建说明902.png"><span style="mso-spacerun:'yes';font-family:Calibri;mso-fareast-font-family:宋体;
+mso-bidi-font-family:'Times New Roman';font-size:10.5000pt;mso-font-kerning:1.0000pt;"><o:p>&nbsp;</o:p></span>
+        </p><p class=MsoNormal>
+            <img width="554" height="269" src="assets/img/dev/腾讯云直播搭建说明904.png"><span style="mso-spacerun:'yes';font-family:Calibri;mso-fareast-font-family:宋体;
+mso-bidi-font-family:'Times New Roman';font-size:10.5000pt;mso-font-kerning:1.0000pt;"><o:p>&nbsp;</o:p></span>
+        </p><p class=MsoNormal>
+            <span style="mso-spacerun:'yes';font-family:Calibri;mso-fareast-font-family:宋体;
+mso-bidi-font-family:'Times New Roman';font-size:10.5000pt;mso-font-kerning:1.0000pt;"><o:p>&nbsp;</o:p></span>
+        </p><p class=MsoNormal>
+            <span style="mso-spacerun:'yes';font-family:Calibri;mso-fareast-font-family:宋体;
+mso-bidi-font-family:'Times New Roman';font-size:10.5000pt;mso-font-kerning:1.0000pt;"><o:p>&nbsp;</o:p></span>
+        </p><p class=MsoNormal>
+            <span style="mso-spacerun:'yes';font-family:Calibri;mso-fareast-font-family:宋体;
+mso-bidi-font-family:'Times New Roman';font-size:10.5000pt;mso-font-kerning:1.0000pt;"><o:p>&nbsp;</o:p></span>
+        </p><p class=MsoNormal>
+            <b>
+                <span style="mso-spacerun:'yes';font-family:宋体;mso-ascii-font-family:Calibri;
+mso-hansi-font-family:Calibri;mso-bidi-font-family:'Times New Roman';font-weight:bold;
+font-size:16.0000pt;mso-font-kerning:1.0000pt;"><font face="宋体">第四步</font>: <font face="宋体">推流和播放</font></span>
+            </b><b>
+                <span style="mso-spacerun:'yes';font-family:宋体;mso-ascii-font-family:Calibri;
+mso-hansi-font-family:Calibri;mso-bidi-font-family:'Times New Roman';font-weight:bold;
+font-size:16.0000pt;mso-font-kerning:1.0000pt;"><o:p></o:p></span>
+            </b>
+        </p><p class=MsoNormal>
+            <b>
+                <span style="mso-spacerun:'yes';font-family:宋体;mso-ascii-font-family:Calibri;
+mso-hansi-font-family:Calibri;mso-bidi-font-family:'Times New Roman';font-weight:bold;
+font-size:10.5000pt;mso-font-kerning:1.0000pt;"><font face="宋体">因为我们使用的是三方的云直播服务</font>,<font face="宋体">所以不用考虑服务器性能和</font><font face="Calibri">CDN</font><font face="宋体">加速的问题</font><font face="Calibri">,</font><font face="宋体">也就是说理论上我们的直播是可以同时开无数个直播间的</font><font face="Calibri">.</font></span>
+            </b><b>
+                <span style="mso-spacerun:'yes';font-family:宋体;mso-ascii-font-family:Calibri;
+mso-hansi-font-family:Calibri;mso-bidi-font-family:'Times New Roman';font-weight:bold;
+font-size:10.5000pt;mso-font-kerning:1.0000pt;"><o:p></o:p></span>
+            </b>
+        </p><p class=MsoNormal>
+            <b>
+                <span style="mso-spacerun:'yes';font-family:宋体;mso-ascii-font-family:Calibri;
+mso-hansi-font-family:Calibri;mso-bidi-font-family:'Times New Roman';font-weight:bold;
+font-size:10.5000pt;mso-font-kerning:1.0000pt;"><font face="宋体">那么如何创建直播间</font>,<font face="宋体">从技术上来说一个推流地址就是一个直播间</font><font face="Calibri">,</font><font face="宋体">如下</font></span>
+            </b><b>
+                <span style="mso-spacerun:'yes';font-family:Calibri;mso-fareast-font-family:宋体;
+mso-bidi-font-family:'Times New Roman';font-weight:bold;font-size:10.5000pt;
+mso-font-kerning:1.0000pt;"><o:p></o:p></span>
+            </b>
+        </p><p class=MsoNormal>
+            <b>
+                <span style="mso-spacerun:'yes';font-family:Calibri;mso-fareast-font-family:宋体;
+mso-bidi-font-family:'Times New Roman';font-weight:bold;font-size:10.5000pt;
+mso-font-kerning:1.0000pt;">RTMP <font face="宋体">推流地址格式为</font><font face="Calibri">rtmp://domain/live/StreamName</font></span>
+            </b><b>
+                <span style="mso-spacerun:'yes';font-family:Calibri;mso-fareast-font-family:宋体;
+mso-bidi-font-family:'Times New Roman';font-weight:bold;font-size:10.5000pt;
+mso-font-kerning:1.0000pt;"><o:p></o:p></span>
+            </b>
+        </p><p class=MsoNormal>
+            <b>
+                <span style="mso-spacerun:'yes';font-family:Calibri;mso-fareast-font-family:宋体;
+mso-bidi-font-family:'Times New Roman';font-weight:bold;font-size:10.5000pt;
+mso-font-kerning:1.0000pt;"><font face="宋体">其中：</font></span>
+            </b><b>
+                <span style="mso-spacerun:'yes';font-family:Calibri;mso-fareast-font-family:宋体;
+mso-bidi-font-family:'Times New Roman';font-weight:bold;font-size:10.5000pt;
+mso-font-kerning:1.0000pt;"><o:p></o:p></span>
+            </b>
+        </p><p class=MsoNormal>
+            <b>
+                <span style="mso-spacerun:'yes';font-family:Calibri;mso-fareast-font-family:宋体;
+mso-bidi-font-family:'Times New Roman';font-weight:bold;font-size:10.5000pt;
+mso-font-kerning:1.0000pt;">domain<font face="宋体">：直播推流域名。</font></span>
+            </b><b>
+                <span style="mso-spacerun:'yes';font-family:Calibri;mso-fareast-font-family:宋体;
+mso-bidi-font-family:'Times New Roman';font-weight:bold;font-size:10.5000pt;
+mso-font-kerning:1.0000pt;"><o:p></o:p></span>
+            </b>
+        </p><p class=MsoNormal>
+            <b>
+                <span style="mso-spacerun:'yes';font-family:Calibri;mso-fareast-font-family:宋体;
+mso-bidi-font-family:'Times New Roman';font-weight:bold;font-size:10.5000pt;
+mso-font-kerning:1.0000pt;">AppName<font face="宋体">：应用名称，默认为 </font><font face="Calibri">live.</font></span>
+            </b><b>
+                <span style="mso-spacerun:'yes';font-family:Calibri;mso-fareast-font-family:宋体;
+mso-bidi-font-family:'Times New Roman';font-weight:bold;font-size:10.5000pt;
+mso-font-kerning:1.0000pt;"><o:p></o:p></span>
+            </b>
+        </p><p class=MsoNormal>
+            <b>
+                <span style="mso-spacerun:'yes';font-family:Calibri;mso-fareast-font-family:宋体;
+mso-bidi-font-family:'Times New Roman';font-weight:bold;font-size:10.5000pt;
+mso-font-kerning:1.0000pt;">StreamName<font face="宋体">：流名称，用户自定义，用于标识直播流</font></span>
+            </b><b>
+                <span style="mso-spacerun:'yes';font-family:宋体;mso-ascii-font-family:Calibri;
+mso-hansi-font-family:Calibri;mso-bidi-font-family:'Times New Roman';font-weight:bold;
+font-size:10.5000pt;mso-font-kerning:1.0000pt;">,<font face="宋体">前面为官方说法</font><font face="Calibri">,</font><font face="宋体">我称</font></span>
+            </b><b>
+                <span style="mso-spacerun:'yes';font-family:Calibri;mso-fareast-font-family:宋体;
+mso-bidi-font-family:'Times New Roman';font-weight:bold;font-size:10.5000pt;
+mso-font-kerning:1.0000pt;">StreamName</span>
+            </b><b>
+                <span style="mso-spacerun:'yes';font-family:宋体;mso-ascii-font-family:Calibri;
+mso-hansi-font-family:Calibri;mso-bidi-font-family:'Times New Roman';font-weight:bold;
+font-size:10.5000pt;mso-font-kerning:1.0000pt;"><font face="宋体">为房间名称</font></span>
+            </b><b>
+                <span style="mso-spacerun:'yes';font-family:Calibri;mso-fareast-font-family:宋体;
+mso-bidi-font-family:'Times New Roman';font-weight:bold;font-size:10.5000pt;
+mso-font-kerning:1.0000pt;"><o:p></o:p></span>
+            </b>
+        </p><p class=MsoNormal>
+            <b>
+                <span style="mso-spacerun:'yes';font-family:宋体;mso-ascii-font-family:Calibri;
+mso-hansi-font-family:Calibri;mso-bidi-font-family:'Times New Roman';font-weight:bold;
+font-size:10.5000pt;mso-font-kerning:1.0000pt;"><font face="宋体">推流地址和播放地址示例</font>::</span>
+            </b><b>
+                <span style="mso-spacerun:'yes';font-family:宋体;mso-ascii-font-family:Calibri;
+mso-hansi-font-family:Calibri;mso-bidi-font-family:'Times New Roman';font-weight:bold;
+font-size:10.5000pt;mso-font-kerning:1.0000pt;"><o:p></o:p></span>
+            </b>
+        </p><p class=MsoNormal>
+            <b>
+                <span style="mso-spacerun:'yes';font-family:宋体;mso-ascii-font-family:Calibri;
+mso-hansi-font-family:Calibri;mso-bidi-font-family:'Times New Roman';font-weight:bold;
+font-size:10.5000pt;mso-font-kerning:1.0000pt;"><font face="宋体">如果推流地址是</font>rtmp://push.test.com/live/zhibojian1 </span>
+            </b><b>
+                <span style="mso-spacerun:'yes';font-family:宋体;mso-ascii-font-family:Calibri;
+mso-hansi-font-family:Calibri;mso-bidi-font-family:'Times New Roman';font-weight:bold;
+font-size:10.5000pt;mso-font-kerning:1.0000pt;"><o:p></o:p></span>
+            </b>
+        </p><p class=MsoNormal>
+            <b>
+                <span style="mso-spacerun:'yes';font-family:宋体;mso-ascii-font-family:Calibri;
+mso-hansi-font-family:Calibri;mso-bidi-font-family:'Times New Roman';font-weight:bold;
+font-size:10.5000pt;mso-font-kerning:1.0000pt;"><font face="宋体">那么他的播放地址就是</font></span>
+            </b><b>
+                <span style="mso-spacerun:'yes';font-family:宋体;mso-ascii-font-family:Calibri;
+mso-hansi-font-family:Calibri;mso-bidi-font-family:'Times New Roman';font-weight:bold;
+font-size:10.5000pt;mso-font-kerning:1.0000pt;"><o:p></o:p></span>
+            </b>
+        </p><p class=MsoNormal>
+            <b>
+                <span style="mso-spacerun:'yes';font-family:宋体;mso-ascii-font-family:Calibri;
+mso-hansi-font-family:Calibri;mso-bidi-font-family:'Times New Roman';font-weight:bold;
+font-size:10.5000pt;mso-font-kerning:1.0000pt;">http://live.test.com/live/zhibojian1.flv (<font face="宋体">此地址</font><font face="Calibri">flv</font><font face="宋体">协议</font><font face="Calibri">,</font><font face="宋体">一般为电脑端常用</font><font face="Calibri">)</font></span>
+            </b><b>
+                <span style="mso-spacerun:'yes';font-family:宋体;mso-ascii-font-family:Calibri;
+mso-hansi-font-family:Calibri;mso-bidi-font-family:'Times New Roman';font-weight:bold;
+font-size:10.5000pt;mso-font-kerning:1.0000pt;"><o:p></o:p></span>
+            </b>
+        </p><p class=MsoNormal>
+            <b>
+                <span style="mso-spacerun:'yes';font-family:宋体;mso-ascii-font-family:Calibri;
+mso-hansi-font-family:Calibri;mso-bidi-font-family:'Times New Roman';font-weight:bold;
+font-size:10.5000pt;mso-font-kerning:1.0000pt;">http://live.test.com/live/zhibojian1.m3u8 (<font face="宋体">此地址是</font><font face="Calibri">hls</font><font face="宋体">协议</font><font face="Calibri">,</font><font face="宋体">手机端基本只能使用此协议</font><font face="Calibri">)</font></span>
+            </b><b>
+                <span style="mso-spacerun:'yes';font-family:Calibri;mso-fareast-font-family:宋体;
+mso-bidi-font-family:'Times New Roman';font-weight:bold;font-size:10.5000pt;
+mso-font-kerning:1.0000pt;"><o:p></o:p></span>
+            </b>
+        </p><p class=MsoNormal>
+            <b>
+                <span style="mso-spacerun:'yes';font-family:Calibri;mso-fareast-font-family:宋体;
+mso-bidi-font-family:'Times New Roman';font-weight:bold;font-size:10.5000pt;
+mso-font-kerning:1.0000pt;"><o:p>&nbsp;</o:p></span>
+            </b>
+        </p><p class=MsoNormal>
+            <b>
+                <span style="mso-spacerun:'yes';font-family:宋体;mso-ascii-font-family:Calibri;
+mso-hansi-font-family:Calibri;mso-bidi-font-family:'Times New Roman';font-weight:bold;
+font-size:10.5000pt;mso-font-kerning:1.0000pt;">zhibojian1<font face="宋体">就是房间名称</font><font face="Calibri">,</font><font face="宋体">同样我也可以使用</font><font face="Calibri">zhibojian2 zhibojian3 .....</font><font face="宋体">等等 &nbsp;</font></span>
+            </b><b>
+                <span style="mso-spacerun:'yes';font-family:宋体;mso-ascii-font-family:Calibri;
+mso-hansi-font-family:Calibri;mso-bidi-font-family:'Times New Roman';color:rgb(255,0,0);
+font-weight:bold;font-size:10.5000pt;mso-font-kerning:1.0000pt;"><font face="宋体">但是如果同时没有多人直播的话</font> <font face="宋体">一般只需要一个直播间即可</font></span>
+            </b><b>
+                <span style="mso-spacerun:'yes';font-family:Calibri;mso-fareast-font-family:宋体;
+mso-bidi-font-family:'Times New Roman';font-weight:bold;font-size:10.5000pt;
+mso-font-kerning:1.0000pt;"><o:p></o:p></span>
+            </b>
+        </p><p class=MsoNormal>
+            <b>
+                <span style="mso-spacerun:'yes';font-family:Calibri;mso-fareast-font-family:宋体;
+mso-bidi-font-family:'Times New Roman';font-weight:bold;font-size:10.5000pt;
+mso-font-kerning:1.0000pt;"><o:p>&nbsp;</o:p></span>
+            </b>
+        </p><p class=MsoNormal>
+            <b>
+                <span style="mso-spacerun:'yes';font-family:Calibri;mso-fareast-font-family:宋体;
+mso-bidi-font-family:'Times New Roman';font-weight:bold;font-size:10.5000pt;
+mso-font-kerning:1.0000pt;"><o:p>&nbsp;</o:p></span>
+            </b>
+        </p><p class=MsoNormal>
+            <span style="mso-spacerun:'yes';font-family:宋体;mso-ascii-font-family:Calibri;
+mso-hansi-font-family:Calibri;mso-bidi-font-family:'Times New Roman';font-size:10.5000pt;
+mso-font-kerning:1.0000pt;"><font face="宋体">到目前来说就可以测试播放了</font>,</span><span style="mso-spacerun:'yes';font-family:宋体;mso-ascii-font-family:Calibri;
+mso-hansi-font-family:Calibri;mso-bidi-font-family:'Times New Roman';font-size:10.5000pt;
+mso-font-kerning:1.0000pt;"><o:p></o:p></span>
+        </p><p class=MsoNormal>
+            <span style="mso-spacerun:'yes';font-family:宋体;mso-ascii-font-family:Calibri;
+mso-hansi-font-family:Calibri;mso-bidi-font-family:'Times New Roman';font-size:10.5000pt;
+mso-font-kerning:1.0000pt;"><font face="宋体">电脑可以使用</font>OBS<font face="宋体">推流 教程地址如下</font></span><span style="mso-spacerun:'yes';font-family:宋体;mso-ascii-font-family:Calibri;
+mso-hansi-font-family:Calibri;mso-bidi-font-family:'Times New Roman';font-size:10.5000pt;
+mso-font-kerning:1.0000pt;"><o:p></o:p></span>
+        </p><p class=MsoNormal>
+            <span>
+                <a href="https://cloud.tencent.com/document/product/267/32726">
+                    <u>
+                        <span class="15" style="mso-spacerun:'yes';font-family:'Times New Roman';color:rgb(0,0,255);
+text-decoration:underline;text-underline:single;">https://cloud.tencent.com/document/product/267/32726</span>
+                    </u>
+                </a>
+            </span><span style="mso-spacerun:'yes';font-family:Calibri;mso-fareast-font-family:宋体;
+mso-bidi-font-family:'Times New Roman';font-size:10.5000pt;mso-font-kerning:1.0000pt;"><o:p></o:p></span>
+        </p><p class=MsoNormal>
+            <span style="mso-spacerun:'yes';font-family:宋体;mso-ascii-font-family:Calibri;
+mso-hansi-font-family:Calibri;mso-bidi-font-family:'Times New Roman';font-size:10.5000pt;
+mso-font-kerning:1.0000pt;"><font face="宋体">如果是手机推流请使用微信扫描下方二维码使用小程序推流</font></span><span style="mso-spacerun:'yes';font-family:宋体;mso-ascii-font-family:Calibri;
+mso-hansi-font-family:Calibri;mso-bidi-font-family:'Times New Roman';font-size:10.5000pt;
+mso-font-kerning:1.0000pt;"><o:p></o:p></span>
+        </p><p class=MsoNormal>
+            <img width="120" height="158" src="assets/img/dev/腾讯云直播搭建说明1625.png"><span style="mso-spacerun:'yes';font-family:Calibri;mso-fareast-font-family:宋体;
+mso-bidi-font-family:'Times New Roman';font-size:10.5000pt;mso-font-kerning:1.0000pt;"><o:p>&nbsp;</o:p></span>
+        </p><p class=MsoNormal>
+            <span style="mso-spacerun:'yes';font-family:宋体;mso-ascii-font-family:Calibri;
+mso-hansi-font-family:Calibri;mso-bidi-font-family:'Times New Roman';font-size:10.5000pt;
+mso-font-kerning:1.0000pt;"><font face="宋体">进入后点击</font></span><span style="mso-spacerun:'yes';font-family:宋体;mso-ascii-font-family:Calibri;
+mso-hansi-font-family:Calibri;mso-bidi-font-family:'Times New Roman';font-size:10.5000pt;
+mso-font-kerning:1.0000pt;">RTMP<font face="宋体">推流</font></span><span style="mso-spacerun:'yes';font-family:宋体;mso-ascii-font-family:Calibri;
+mso-hansi-font-family:Calibri;mso-bidi-font-family:'Times New Roman';font-size:10.5000pt;
+mso-font-kerning:1.0000pt;"><o:p></o:p></span>
+        </p><p class=MsoNormal>
+            <img width="191" height="176" src="assets/img/dev/腾讯云直播搭建说明1639.png"><span style="mso-spacerun:'yes';font-family:Calibri;mso-fareast-font-family:宋体;
+mso-bidi-font-family:'Times New Roman';font-size:10.5000pt;mso-font-kerning:1.0000pt;"><o:p>&nbsp;</o:p></span>
+        </p><p class=MsoNormal>
+            <span style="mso-spacerun:'yes';font-family:宋体;mso-ascii-font-family:Calibri;
+mso-hansi-font-family:Calibri;mso-bidi-font-family:'Times New Roman';font-size:10.5000pt;
+mso-font-kerning:1.0000pt;"><font face="宋体">把上方自定义的推流地址粘贴到输入框点击开始即可</font></span><span style="mso-spacerun:'yes';font-family:Calibri;mso-fareast-font-family:宋体;
+mso-bidi-font-family:'Times New Roman';font-size:10.5000pt;mso-font-kerning:1.0000pt;"><o:p></o:p></span>
+        </p><p class=MsoNormal>
+            <img width="370" height="811" src="assets/img/dev/腾讯云直播搭建说明1665.png"><span style="mso-spacerun:'yes';font-family:Calibri;mso-fareast-font-family:宋体;
+mso-bidi-font-family:'Times New Roman';font-size:10.5000pt;mso-font-kerning:1.0000pt;"><o:p>&nbsp;</o:p></span>
+        </p><p class=MsoNormal>
+            <span style="mso-spacerun:'yes';font-family:宋体;mso-ascii-font-family:Calibri;
+mso-hansi-font-family:Calibri;mso-bidi-font-family:'Times New Roman';font-size:10.5000pt;
+mso-font-kerning:1.0000pt;"><font face="宋体">到此处直播人员的任务完成了</font>,<font face="宋体">那么怎么播放呢</font><font face="Calibri">,</font><font face="宋体">我们可以使用多种办法播放</font><font face="Calibri">,</font><font face="宋体">比如使用</font><font face="Calibri">VLC</font><font face="宋体">播放直播流</font><font face="Calibri">,</font><font face="宋体">但是还需要用户下载软件然后一顿操作</font><font face="Calibri">,</font><font face="宋体">比较麻烦</font><font face="Calibri">,</font><font face="宋体">最简单的就是开发人员麻烦一些</font><font face="Calibri">,</font><font face="宋体">用户一键操作</font></span><span style="mso-spacerun:'yes';font-family:Calibri;mso-fareast-font-family:宋体;
+mso-bidi-font-family:'Times New Roman';font-size:10.5000pt;mso-font-kerning:1.0000pt;"><o:p></o:p></span>
+        </p><p class=MsoNormal>
+            <span style="mso-spacerun:'yes';font-family:宋体;mso-ascii-font-family:Calibri;
+mso-hansi-font-family:Calibri;mso-bidi-font-family:'Times New Roman';font-size:10.5000pt;
+mso-font-kerning:1.0000pt;"><font face="宋体">此处可以参考我编写的代码</font></span><span style="mso-spacerun:'yes';font-family:宋体;mso-ascii-font-family:Calibri;
+mso-hansi-font-family:Calibri;mso-bidi-font-family:'Times New Roman';font-size:10.5000pt;
+mso-font-kerning:1.0000pt;"><o:p></o:p></span>
+        </p><p class=MsoNormal>
+            <span>
+                <a href="https://github.com/GoodHarvest/livetest.git">
+                    <u>
+                        <span class="17" style="mso-spacerun:'yes';font-family:宋体;color:rgb(128,0,128);
+text-decoration:underline;text-underline:single;">https://github.com/GoodHarvest/livetest.git</span>
+                    </u>
+                </a>
+            </span><span style="mso-spacerun:'yes';font-family:宋体;mso-ascii-font-family:Calibri;
+mso-hansi-font-family:Calibri;mso-bidi-font-family:'Times New Roman';font-size:10.5000pt;
+mso-font-kerning:1.0000pt;"><o:p></o:p></span>
+        </p><p class=MsoNormal>
+            <span style="mso-spacerun:'yes';font-family:宋体;mso-ascii-font-family:Calibri;
+mso-hansi-font-family:Calibri;mso-bidi-font-family:'Times New Roman';font-size:10.5000pt;
+mso-font-kerning:1.0000pt;"><font face="宋体">把如下两个变量改成你的对应协议的播放地址即可</font>,<font face="宋体">然后把网站发布到你的域名对应的服务器上即可</font><font face="Calibri">,</font><font face="宋体">美工基础较差</font><font face="Calibri">,</font><font face="宋体">功能还算能用</font><font face="Calibri">,</font><font face="宋体">后期会完善在线人数</font><font face="Calibri">,</font><font face="宋体">弹幕等功能</font></span><span style="mso-spacerun:'yes';font-family:Calibri;mso-fareast-font-family:宋体;
+mso-bidi-font-family:'Times New Roman';font-size:10.5000pt;mso-font-kerning:1.0000pt;"><o:p></o:p></span>
+        </p><p class=MsoNormal>
+            <img width="553" height="305" src="assets/img/dev/腾讯云直播搭建说明1942.png"><span style="mso-spacerun:'yes';font-family:Calibri;mso-fareast-font-family:宋体;
+mso-bidi-font-family:'Times New Roman';font-size:10.5000pt;mso-font-kerning:1.0000pt;"><o:p>&nbsp;</o:p></span>
+        </p><p class=MsoNormal>
+            <span style="mso-spacerun:'yes';font-family:宋体;mso-ascii-font-family:Calibri;
+mso-hansi-font-family:Calibri;mso-bidi-font-family:'Times New Roman';font-size:10.5000pt;
+mso-font-kerning:1.0000pt;"><o:p>&nbsp;</o:p></span>
+        </p><p class=MsoNormal>
+            <span style="mso-spacerun:'yes';font-family:Calibri;mso-fareast-font-family:宋体;
+mso-bidi-font-family:'Times New Roman';font-size:10.5000pt;mso-font-kerning:1.0000pt;"><o:p>&nbsp;</o:p></span>
+        </p><p class=MsoNormal>
+            <span style="mso-spacerun:'yes';font-family:Calibri;mso-fareast-font-family:宋体;
+mso-bidi-font-family:'Times New Roman';font-size:10.5000pt;mso-font-kerning:1.0000pt;"><o:p>&nbsp;</o:p></span>
+        </p><p class=MsoNormal style="text-indent:21.0000pt;mso-char-indent-count:0.0000;">
+            <span style="mso-spacerun:'yes';font-family:Calibri;mso-fareast-font-family:宋体;
+mso-bidi-font-family:'Times New Roman';font-size:10.5000pt;mso-font-kerning:1.0000pt;"><o:p>&nbsp;</o:p></span>
+        </p>
+    </div><!--EndFragment-->
+</body>
+</html>
