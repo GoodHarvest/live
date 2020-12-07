@@ -1,0 +1,449 @@
+﻿<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="直播历史回放,建议使用电信联通宽带或者是手机流量进行浏览" />
+    <meta property="og:description" content="直播历史回放,建议使用电信联通宽带或者是手机流量进行浏览。" />
+    <title>回放</title>
+
+    <!--图标样式和布局-->
+    <link href="//lib.baomitu.com/twitter-bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+    <!--<link href="../assets/css/bootstrap.min.css" rel="stylesheet">-->
+    <!--公共样式-->
+
+    <style type="text/css">
+        .demo {
+            padding: 2em;
+            background: #fff;
+        }
+
+        .serviceBox {
+            border: 1px solid #ededed;
+            padding: 15px 15px 15px 15px;
+            position: relative;
+            transition: all 0.5s ease 0s;
+        }
+
+            .serviceBox:hover {
+                border-color: #41d7f7;
+            }
+
+            .serviceBox:before,
+            .serviceBox:after {
+                content: "";
+                display: block;
+                width: 50px;
+                height: 5px;
+                background: #41d7f7;
+                position: absolute;
+                left: 0;
+                opacity: 0;
+                transition: all 0.5s ease 0s;
+            }
+
+            .serviceBox:before {
+                top: -3px;
+            }
+
+            .serviceBox:after {
+                bottom: -3px;
+            }
+
+            .serviceBox:hover:before,
+            .serviceBox:hover:after {
+                left: 40px;
+                opacity: 1;
+            }
+
+            .serviceBox .service-icon {
+                display: inline-block;
+                position: absolute;
+                top: 33%;
+                left: 23px;
+                font-size: 45px;
+                color: #41d7f7;
+                opacity: 0.3;
+                transition: all 0.5s ease-in 0s;
+            }
+
+            .serviceBox:hover .service-icon {
+                opacity: 1;
+            }
+
+            .serviceBox .title {
+                font-size: 15px;
+                font-weight: 700;
+                color: #41d7f7;
+                text-align: center;
+            }
+
+            .serviceBox .distance {
+                font-size: 15px;
+                font-weight: 700;
+                color: olive;
+                margin-bottom: 15px;
+                text-align: center;
+            }
+
+            .serviceBox .description {
+                font-size: 13px;
+                color: #666;
+                line-height: 20px;
+                text-align: center;
+                text-decoration: underline;
+            }
+
+        @media only screen and (max-width: 990px) {
+            .serviceBox {
+                margin-bottom: 30px;
+            }
+        }
+
+
+
+        /*加载进度条*/
+        .loader--audioWave {
+            width: 3em;
+            height: 2em;
+            background: linear-gradient(#9b59b6, #9b59b6) 0 50%, linear-gradient(#9b59b6, #9b59b6) 0.625em 50%, linear-gradient(#9b59b6, #9b59b6) 1.25em 50%, linear-gradient(#9b59b6, #9b59b6) 1.875em 50%, linear-gradient(#9b59b6, #9b59b6) 2.5em 50%;
+            background-repeat: no-repeat;
+            background-size: 0.5em 0.25em, 0.5em 0.25em, 0.5em 0.25em, 0.5em 0.25em, 0.5em 0.25em;
+            animation: audioWave 1.5s linear infinite;
+        }
+
+        @keyframes audioWave {
+            25% {
+                background: linear-gradient(#3498db, #3498db) 0 50%, linear-gradient(#9b59b6, #9b59b6) 0.625em 50%, linear-gradient(#9b59b6, #9b59b6) 1.25em 50%, linear-gradient(#9b59b6, #9b59b6) 1.875em 50%, linear-gradient(#9b59b6, #9b59b6) 2.5em 50%;
+                background-repeat: no-repeat;
+                background-size: 0.5em 2em, 0.5em 0.25em, 0.5em 0.25em, 0.5em 0.25em, 0.5em 0.25em;
+            }
+
+            37.5% {
+                background: linear-gradient(#9b59b6, #9b59b6) 0 50%, linear-gradient(#3498db, #3498db) 0.625em 50%, linear-gradient(#9b59b6, #9b59b6) 1.25em 50%, linear-gradient(#9b59b6, #9b59b6) 1.875em 50%, linear-gradient(#9b59b6, #9b59b6) 2.5em 50%;
+                background-repeat: no-repeat;
+                background-size: 0.5em 0.25em, 0.5em 2em, 0.5em 0.25em, 0.5em 0.25em, 0.5em 0.25em;
+            }
+
+            50% {
+                background: linear-gradient(#9b59b6, #9b59b6) 0 50%, linear-gradient(#9b59b6, #9b59b6) 0.625em 50%, linear-gradient(#3498db, #3498db) 1.25em 50%, linear-gradient(#9b59b6, #9b59b6) 1.875em 50%, linear-gradient(#9b59b6, #9b59b6) 2.5em 50%;
+                background-repeat: no-repeat;
+                background-size: 0.5em 0.25em, 0.5em 0.25em, 0.5em 2em, 0.5em 0.25em, 0.5em 0.25em;
+            }
+
+            62.5% {
+                background: linear-gradient(#9b59b6, #9b59b6) 0 50%, linear-gradient(#9b59b6, #9b59b6) 0.625em 50%, linear-gradient(#9b59b6, #9b59b6) 1.25em 50%, linear-gradient(#3498db, #3498db) 1.875em 50%, linear-gradient(#9b59b6, #9b59b6) 2.5em 50%;
+                background-repeat: no-repeat;
+                background-size: 0.5em 0.25em, 0.5em 0.25em, 0.5em 0.25em, 0.5em 2em, 0.5em 0.25em;
+            }
+
+            75% {
+                background: linear-gradient(#9b59b6, #9b59b6) 0 50%, linear-gradient(#9b59b6, #9b59b6) 0.625em 50%, linear-gradient(#9b59b6, #9b59b6) 1.25em 50%, linear-gradient(#9b59b6, #9b59b6) 1.875em 50%, linear-gradient(#3498db, #3498db) 2.5em 50%;
+                background-repeat: no-repeat;
+                background-size: 0.5em 0.25em, 0.5em 0.25em, 0.5em 0.25em, 0.5em 0.25em, 0.5em 2em;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="alert alert-warning text-center">
+        <strong>温馨提示！</strong><br />
+        建议使用流量进行加载<br />
+        或者使用联通,电信的宽带<br />
+        请等待时间显示出来再点播放<br />
+        如果一直不显示时间不出来请点击刷新<br />或者切换流量后刷新
+    </div>
+    <div style="text-align:center">
+        <button class="btn btn-primary" onclick="location.reload()">刷新</button>
+        <a class="btn btn-success" href="index.html">返回直播</a>
+    </div>
+
+    <div class="demo">
+        <div class="container">
+            <div class="row" id="rows">
+
+                <!--<div class="col-md-4 col-sm-6">
+                    <div class="serviceBox">
+                        <div class="service-Content">
+
+                            <h3 class="title">
+                                2020年2月12日
+                            </h3>
+                            <p class="description">
+                                2020年2月12日
+                            </p>
+                            <audio controls autoplay="autoplay">
+                                <source src="assets/mcaudios/mc202002121.MP3" type="audio/mpeg" codecs="aac" />
+                                您的浏览器不支持音视频，建议下载
+                                <a href="assets/mcaudios/mc202002121.mp3">手动下载</a>
+                            </audio>
+                        </div>
+                    </div>
+                </div>-->
+
+            </div>
+        </div>
+    </div>
+    <script src="//lib.baomitu.com/jquery/3.4.1/jquery.min.js"></script>
+    <!--<script type="text/javascript" src="../assets/js/jquery.min.js" charset="utf-8"></script>-->
+    <script>
+        var audios =
+            [
+                {
+                    "title": "基督徒的两律征战(罗马书7)1",
+                    "description": "2020.12.06主日分享(GX)",
+                    "url": "HISTORY/GH/1206001_b_gx.mp3",
+                },
+                {
+                    "title": "基督徒的两律征战(罗马书7)",
+                    "description": "2020.12.06主日分享(GX)",
+                    "url": "https://github.com/GoodHarvest/live_release/releases/download/BJ2020/1206001_b_gx.mp3",
+                },
+                {
+                    "title": "恩典的管道(7)-行走的能力",
+                    "description": "2020.11.29主日分享(Y)",
+                    "url": "https://github.com/GoodHarvest/live_release/releases/download/BJ2020/1129001_b_y.mp3",
+                },
+                {
+                    "title": "要正确的理解神的心意",
+                    "description": "2020.11.22主日分享(Z)",
+                    "url": "https://github.com/GoodHarvest/live_release/releases/download/BJ2020/1122001_b_z.mp3",
+                },
+                {
+                    "title": "神给天国子民的托付",
+                    "description": "2020.11.15主日分享(G)",
+                    "url": "https://github.com/GoodHarvest/live_release/releases/download/BJ2020/1115001_b_g.mp3",
+                },
+                {
+                    "title": "行为法则和信心法则(罗马书3)",
+                    "description": "2020.11.8主日分享(GX)",
+                    "url": "https://github.com/GoodHarvest/live_release/releases/download/BJ2020/1108001_b_gx.mp3",
+                },
+                {
+                    "title": "神要祝福我们",
+                    "description": "2020.11.1主日分享(W)",
+                    "url": "https://github.com/GoodHarvest/live_release/releases/download/BJ2020/1101001_b_w.mp3",
+                },
+                {
+                    "title": "恩典的管道(6)-有使命的教会",
+                    "description": "2020.10.25主日分享(Y)",
+                    "url": "https://github.com/GoodHarvest/live_release/releases/download/BJ2020/1025001_b_y.mp3",
+                },
+                {
+                    "title": "常存一颗感恩的心",
+                    "description": "2020.10.18主日分享(Z)",
+                    "url": "https://github.com/GoodHarvest/live_release/releases/download/BJ2020/1018001_b_z.mp3",
+                },
+                {
+                    "title": "起来建立祷告的祭坛",
+                    "description": "2020.10.11主日分享(G)",
+                    "url": "https://github.com/GoodHarvest/live_release/releases/download/BJ2020/1011001_b_g.mp3",
+                },
+                {
+                    "title": "神的审判-对论断者的审判(罗马书2)",
+                    "description": "2020.10.04主日分享(GX)",
+                    "url": "https://github.com/GoodHarvest/live_release/releases/download/BJ2020/1004001_b_gx.mp3",
+                },
+                {
+                    "title": "恩典的管道(5)",
+                    "description": "2020.9.26主日分享(Y)(周六晚)",
+                    "url": "https://github.com/GoodHarvest/live_release/releases/download/BJ2020/0926001_b_y.mp3",
+                },
+                {
+                    "title": "跟随神的带领",
+                    "description": "2020.9.20主日分享(Z)",
+                    "url": "https://github.com/GoodHarvest/live_release/releases/download/BJ2020/0920001_b_Z.mp3",
+                },
+                {
+                    "title": "将自己的明天交给神",
+                    "description": "2020.9.13主日分享(G)",
+                    "url": "https://github.com/GoodHarvest/live_release/releases/download/BJ2020/0913001_b_g.mp3",
+                },
+                {
+                    "title": "义人必因信得生(罗马书1)",
+                    "description": "2020.9.6主日分享(GX)",
+                    "url": "https://github.com/GoodHarvest/live_release/releases/download/BJ2020/0906001_b_gx.mp3",
+                },
+                {
+                    "title": "恩典的管道(4)",
+                    "description": "2020.8.30主日分享(Y)",
+                    "url": "https://github.com/GoodHarvest/live_release/releases/download/BJ2020/0830001_b_y.mp3",
+                },
+                {
+                    "title": "应按照符合神心意的方式行事",
+                    "description": "2020.8.23主日分享(Z)",
+                    "url": "https://github.com/GoodHarvest/live_release/releases/download/BJ2020/0823001_b_z.mp3",
+                },
+                {
+                    "title": "在试炼中经历神的恩典",
+                    "description": "2020.8.16主日分享(G)",
+                    "url": "https://github.com/GoodHarvest/live_release/releases/download/BJ2020/0816001_b_g.mp3",
+                },
+                {
+                    "title": "天父的慈爱领我们悔改(6)",
+                    "description": "2020.8.9主日分享(GX)",
+                    "url": "https://github.com/GoodHarvest/live_release/releases/download/BJ2020/0809001_b_gx.mp3",
+                },
+                {
+                    "title": "恩典的管道(3)",
+                    "description": "2020.8.2主日分享(Y)",
+                    "url": "https://github.com/GoodHarvest/live_release/releases/download/BJ2020/0802001_b_y.mp3",
+                },
+                {
+                    "title": "谦卑的人有福了",
+                    "description": "2020.7.26主日分享(Z)",
+                    "url": "https://github.com/GoodHarvest/live_release/releases/download/BJ2020/0726001_b_z.mp3",
+                },
+                {
+                    "title": "在挑战的环境中寻求神的心意",
+                    "description": "2020.7.19主日分享(G)",
+                    "url": "https://github.com/GoodHarvest/live_release/releases/download/BJ2020/0719001_b_g.mp3",
+                },
+                {
+                    "title": "天父的慈爱领我们悔改(5)",
+                    "description": "2020.7.12主日分享(GX)",
+                    "url": "https://github.com/GoodHarvest/live_release/releases/download/BJ2020/0712001_b_gx.mp3",
+                },
+                {
+                    "title": "恩典的管道(2)",
+                    "description": "2020.7.5主日分享(Y)",
+                    "url": "https://github.com/GoodHarvest/live_release/releases/download/BJ2020/0705001_b_y.mp3",
+                },
+                {
+                    "title": "坚定对神的信心",
+                    "description": "2020.6.28主日分享(Z)",
+                    "url": "https://github.com/GoodHarvest/live_release/releases/download/BJ2020/0628001_b_z.mp3",
+                },
+                {
+                    "title": "靠主做得胜者",
+                    "description": "2020.6.21主日分享(G)",
+                    "url": "https://github.com/GoodHarvest/live_release/releases/download/BJ2020/0621001_b_g.mp3",
+                },
+                {
+                    "title": "天父的慈爱领我们悔改(4)",
+                    "description": "2020.6.14主日分享(GX)",
+                    "url": "https://github.com/GoodHarvest/live_release/releases/download/BJ2020/0614001_b_gx.mp3",
+                },
+                {
+                    "title": "恩典的管道(1)",
+                    "description": "2020.6.7主日分享(Y)",
+                    "url": "https://github.com/GoodHarvest/live_release/releases/download/BJ2020/0607001_b_y.mp3",
+                },
+                {
+                    "title": "活出美好的生命",
+                    "description": "2020.5.31主日分享(Z)",
+                    "url": "https://github.com/GoodHarvest/live_release/releases/download/BJ2020/0531001_b_z.mp3",
+                },
+                {
+                    "title": "困境中的盼望",
+                    "description": "2020.5.24主日分享(G)",
+                    "url": "https://github.com/GoodHarvest/live_release/releases/download/BJ2020/0524001_b_g.mp3",
+                },
+                {
+                    "title": "回转归向神",
+                    "description": "2020.5.17主日分享(Y)",
+                    "url": "https://github.com/GoodHarvest/live_release/releases/download/BJ2020/0517001_b_y.mp3",
+                },
+                {
+                    "title": "天父的慈爱领我们悔改(3)",
+                    "description": "2020.5.10主日分享(GX)",
+                    "url": "https://github.com/GoodHarvest/live_release/releases/download/BJ2020/0510001_b_gx.mp3",
+                },
+                {
+                    "title": "天父的慈爱领我们悔改(2)",
+                    "description": "2020.5.3主日分享(GX)",
+                    "url": "https://github.com/GoodHarvest/live_release/releases/download/BJ2020/0503001_b_gx.mp3",
+                },
+                {
+                    "title": "因真理成圣",
+                    "description": "2020.4.25主日分享(Z)",
+                    "url": "https://github.com/GoodHarvest/live_release/releases/download/BJ2020/0425001_b_z.mp3",
+                },
+                {
+                    "title": "主复活所带来的恩典",
+                    "description": "2020.4.19主日分享(G)",
+                    "url": "https://github.com/GoodHarvest/live_release/releases/download/BJ2020/0419001_b_g.mp3",
+                },
+                {
+                    "title": "安息在耶稣的复活中",
+                    "description": "2020.4.12主日分享(GX)",
+                    "url": "https://github.com/GoodHarvest/live_release/releases/download/BJ2020/0412001_b_gx.mp3",
+                },
+                {
+                    "title": "天父的慈爱领我们悔改(1)",
+                    "description": "2020.4.5主日分享(GX)",
+                    "url": "https://github.com/GoodHarvest/live_release/releases/download/BJ2020/0405001_b_gx.mp3",
+                },
+                {
+                    "title": "彼此相爱,从小事上的接纳开始",
+                    "description": "2020.3.29主日分享(Z)",
+                    "url": "https://github.com/GoodHarvest/live_release/releases/download/BJ2020/0329001_b_z.mp3",
+                },
+                {
+                    "title": "我们要感谢神",
+                    "description": "2020.3.22主日分享(Y)",
+                    "url": "https://github.com/GoodHarvest/live_release/releases/download/BJ2020/0322001_b_y.mp3",
+                },
+                {
+                    "title": "神在这个时刻要做的工作",
+                    "description": "2020.3.15主日分享(G)",
+                    "url": "https://github.com/GoodHarvest/live_release/releases/download/BJ2020/0315001_b_g.mp3",
+                },
+                {
+                    "title": "心意更新而变化(3)",
+                    "description": "2020.3.8主日分享(GX)",
+                    "url": "https://github.com/GoodHarvest/live_release/releases/download/BJ2020/0308001_b_gx.mp3",
+                },
+                {
+                    "title": "心意更新而变化(2)",
+                    "description": "2020.3.1主日分享(GX)",
+                    "url": "https://github.com/GoodHarvest/live_release/releases/download/BJ2020/0301001_b_gx.mp3",
+                },
+                {
+                    "title": "穿戴神所赐的军装",
+                    "description": "2020.2.23主日分享(Y)",
+                    "url": "https://github.com/GoodHarvest/live_release/releases/download/BJ2020/0223001_b_y.mp3",
+                },
+                {
+                    "title": "走出恐惧,活出盼望",
+                    "description": "2020.2.12主日分享(G)",
+                    "url": "https://github.com/GoodHarvest/live_release/releases/download/BJ2020/0216001_b_g.mp3",
+                }
+            ];
+
+        for (var i = 0; i < audios.length; i++) {
+            var audio = audios[i];
+            var html = '<div class="col-md-6 col-sm-6"><div class="serviceBox"><div class="service-Content"><h3 class="title">' + audio.title + '</h3><p class="description">' + audio.description + '</p><p style="text-align:center"><audio controls ><source src="' + audio.url + '" type="audio/mpeg" codecs="aac" />您的浏览器不支持音视频，建议下载<a href="' + audio.url + '">手动下载</a></audio></p></div></div></div>';
+            $("#rows").append(html);
+        }
+
+        var audios = document.getElementsByTagName("audio");
+        // 暂停函数
+        function pauseAll() {
+            var self = this;
+            [].forEach.call(audios, function (i) {
+                // 将audios中其他的audio全部暂停
+                i !== self && i.pause();
+            })
+        }
+        // 给play事件绑定暂停函数
+        [].forEach.call(audios, function (i) {
+            i.addEventListener("play", pauseAll.bind(i));
+        });
+
+        $(window).resize(function () {
+            $("#load").css({
+                display: "",
+                position: "absolute",
+                left: ($(window).width() - $("#load").outerWidth()) / 2,
+                top: ($(window).height() - $("#load").outerHeight()) / 2,
+            });
+        });
+    </script>
+
+</body>
+
+</html>
